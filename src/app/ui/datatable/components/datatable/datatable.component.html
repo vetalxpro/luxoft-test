@@ -1,0 +1,39 @@
+<div class="row py-2">
+  <div class="col-6">
+    <select class="form-control" (change)="onFilterFieldSelect($event)">
+      <option value="" selected disabled>Select field for search...</option>
+      <option value="all">All</option>
+      <option *ngFor="let column of columns" [value]="column.field">{{column.label}}</option>
+    </select>
+  </div>
+  <div class="col-6">
+    <input class="form-control" type="text" (keyup)="onFilterKeyup($event)" placeholder="Search...">
+  </div>
+</div>
+
+<div class="row py-2">
+  <div class="col-12">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th *ngFor="let column of columns" (click)="onSortClick(column)">
+          <ng-container [ngTemplateOutlet]="column.cellHeaderTemplate"
+                        [ngTemplateOutletContext]="{$implicit:column,column:column,sort:sort}">
+          </ng-container>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of data | tableFilter:filter | tableSort:sort">
+        <td *ngFor="let column of columns">
+          <ng-container [ngTemplateOutlet]="column.cellTemplate"
+                        [ngTemplateOutletContext]="{$implicit:item,item:item,column:column}">
+          </ng-container>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

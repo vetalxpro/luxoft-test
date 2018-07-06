@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { WebLinkPipe } from './web-link.pipe';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
+  imports: [],
+  declarations: [ WebLinkPipe ],
+  exports: [
+    WebLinkPipe
+  ]
 })
-export class PipesModule { }
+export class PipesModule {
+}

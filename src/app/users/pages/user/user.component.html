@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-12">
+    <a [routerLink]="['..']">Back</a>
+  </div>
+  <div class="col-12">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{user.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{user.username}}</h6>
+        <p class="card-text">{{user.phone}}</p>
+        <p class="card-text">{{user.email}}</p>
+        <a [href]="'tel:'+user.phone" class="card-link">{{user.phone}}</a>
+        <a [href]="user.website | webLink" class="card-link">{{user.website | webLink}}</a>
+      </div>
+    </div>
+  </div>
+
+</div>

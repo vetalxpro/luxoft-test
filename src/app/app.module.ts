@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MetaLoader, MetaModule, MetaStaticLoader, PageTitlePositioning } from '@ngx-meta/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 const metaFactory = (): MetaLoader => {
   return new MetaStaticLoader({
@@ -25,6 +28,9 @@ const metaFactory = (): MetaLoader => {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    CoreModule,
+    SharedModule,
     MetaModule.forRoot({
       provide: MetaLoader,
       useFactory: metaFactory

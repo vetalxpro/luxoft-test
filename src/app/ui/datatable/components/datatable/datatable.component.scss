@@ -1,0 +1,17 @@
+:host {
+
+}
+
+th {
+  cursor:      pointer;
+  white-space: nowrap;
+  ::ng-deep {
+    .fas {
+      margin-left: 10px;
+    }
+    .fa-sort {
+      opacity: 0.3;
+    }
+  }
+
+}

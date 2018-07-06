@@ -1,0 +1,6 @@
+<ng-template #cellTemplate let-item="item" let-column="column">
+  {{item[column.field]}}
+</ng-template>
+<ng-template #cellHeaderTemplate let-column="column" let-sort="sort">
+  {{column.label}}<i class="fas" *ngIf="sortable" [ngClass]="sortIconClass(column.field,sort)"></i>
+</ng-template>

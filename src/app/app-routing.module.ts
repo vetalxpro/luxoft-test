@@ -8,6 +8,10 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: './home/home.module#HomeModule'
+      },
+      {
+        path: 'users',
+        loadChildren: './users/users.module#UsersModule'
       }
     ]
   },
