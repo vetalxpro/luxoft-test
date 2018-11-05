@@ -14,7 +14,7 @@ export class TableFilterPipe implements PipeTransform {
     return data.filter(( item: string ) => {
       if ( field === 'all' ) {
         const matchedFields = Object.values(item).filter(( _item ) => {
-          return _item.toString().toLowerCase().indexOf(query) > -1;
+          return _item.toString().toLowerCase().indexOf(query.toLowerCase()) > -1;
         });
         return matchedFields.length > 0;
       }
